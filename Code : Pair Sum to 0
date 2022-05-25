@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+int pairSum(int *arr, int n) {
+	// Write your code here
+    unordered_map<int,int> m;
+	int count=0;
+	for(int i=0;i<n;i++)
+    {
+		int comp = -arr[i];
+		if(m.find(comp)!=m.end())
+        {
+			count+=m[comp];
+		}
+		++m[arr[i]];
+	}
+	return count;
+}
